@@ -20,10 +20,10 @@ jobs:
         aws-region: ap-south-1
       
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run build
-      - run: npm run test
+      uses: actions/checkout@v2
+        run: npm ci
+        run: npm run build
+        run: npm run test
 
     - name: Deploy to EC2 Server 
       uses: easingthemes/ssh-deploy@main
