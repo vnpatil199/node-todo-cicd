@@ -66,15 +66,15 @@ app.get('/todo', function (req, res) {
     })
 
     // Edit item in the todo list 
-    // .put('/todo/edit/:id', function (req, res) {
-    //     let todoIdx = req.params.id;
-    //     // Escapes HTML special characters in attribute values as HTML entities
-    //     let editTodo = sanitizer.escape(req.body.editTodo);
-    //     if (todoIdx != '' && editTodo != '') {
-    //         todolist[todoIdx] = editTodo;
-    //     }
-    //     res.redirect('/todo');
-    // })
+    .put('/todo/edit/:id', function (req, res) {
+        let todoIdx = req.params.id;
+        // Escapes HTML special characters in attribute values as HTML entities
+        let editTodo = sanitizer.escape(req.body.editTodo);
+        if (todoIdx != '' && editTodo != '') {
+            todolist[todoIdx] = editTodo;
+        }
+        res.redirect('/todo');
+    })
     /* Redirects to the to do list if the page requested is not found */
     .use(function (req, res, next) {
         res.redirect('/todo');
